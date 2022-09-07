@@ -1,0 +1,204 @@
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% ----- LIGHT MODE -----
+\definecolor{SlateBlue}{HTML}{6A5ACD}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{PrimaryColor}{HTML}{000000}
+\definecolor{SecondaryColor}{HTML}{0000EE}
+\definecolor{ThirdColor}{HTML}{F3890B}
+\definecolor{BackgroundColor}{HTML}{E2E2E2}
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{SlateBlue}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+%\pagecolor{BackgroundColor}   
+% ----- DARK MODE -----
+%\definecolor{BackgroundColor}{HTML}{242424}
+%\definecolor{SlateGrey}{HTML}{6F6F6F}
+%\definecolor{LightGrey}{HTML}{ABABAB}
+%\definecolor{PrimaryColor}{HTML}{3F7FFF}
+%\colorlet{name}{PrimaryColor}
+%\colorlet{tagline}{PrimaryColor}
+%\colorlet{heading}{PrimaryColor}
+%\colorlet{headingrule}{PrimaryColor}
+%\colorlet{subheading}{PrimaryColor}
+%\colorlet{accent}{PrimaryColor}
+%\colorlet{emphasis}{LightGrey}
+%\colorlet{body}{LightGrey}
+%\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+
+    \columnratio{0.6}
+    
+    \name{Eric Karschner}
+    \personalinfo{
+        \email{erickarschner@gmail.com}
+        \newline
+        \homepage{eric.karschner.studio}
+        \newline
+        \github{EricKarschner37}
+        \newline
+        \phone{(570)-494-6150}
+        \newline
+        \linkedin{eric-karschner}
+    }
+    
+    %% \tagline{Test Developer}
+    %% You can add multiple photos on the left or right
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+    \AtBeginEnvironment{itemize}{\small}
+    %\begin{Parallel}{0.55\textwidth}{0.35\textwidth}
+    %\begin{parcolumns}[colwidths={1=0.575\textwidth,2=0.375\textwidth},sloppy=true]{2}
+    \begin{paracol}{2}
+
+    % ----- EDUCATION -----
+    \cvsection{Education}
+        \cvevent{BS Computational Mathematics}{|\cvrepo{Rochester Institute of Technology}{https://www.rit.edu/}}{2019 - 2023}{}
+        \cvtag{GPA: 3.86}
+        \newline
+    % ----- EDUCATION -----
+
+    \switchcolumn
+
+    % ----- LANGUAGES -----
+        \cvsection{Languages}
+        \cvtag{Kotlin} \cvtag{\faJava Java} \cvtag{\faPython Python} \cvtag{\faRust Rust} \cvtag{\faJs Javascript} \cvtag{Matlab} \cvtag{Go}
+    % ----- LANGUAGES -----
+
+    \switchcolumn*
+
+    % ----- EXPERIENCE -----
+    \cvsection{Experience}
+    
+    \cvevent{Software Engineering Intern }{|\cvrepo{Datadog}{https://www.datadoghq.com/}}{Jan 2022 -- Aug 2022}{}
+    Spearheaded and completed project to overhaul Service Resource page in React app and created unit and synthetics tests to ensure performance. Measured performance of and evaluated WebAssembly for performance tuning.\smallskip \smallskip
+    \newline
+    \cvtag{React} \cvtag{Typescript} \cvtag{Redux} \cvtag{Go} \cvtag{WebAssembly}
+    \newline
+    \divider
+    
+    \cvevent{Android Development Intern }{| \cvrepo{Robinhood}{https://robinhood.com}}{May 2021 -- August 2021}{}
+    Created extensible, reusable disclosure flow, optimized for reuse throughout the Android application. Obtained and visualized relevant metrics, including user feedback.\smallskip \smallskip
+    \newline
+    \cvtag{Android} \cvtag{Kotlin} \cvtag{XML} \cvtag{Dagger/Hilt}
+    \newline
+    \divider
+    
+    \cvevent{Software Engineering Intern }{| \cvrepo{CUBRC, Inc.}{https://www.cubrc.org/}}{Jan 2021 -- May 2021}{}
+   Worked on a variety of research projects, with technologies including deep neural networks, computer vision, and other machine learning models. Developed a model to detect misinformation in images, using BERT and NLP. \smallskip \smallskip
+    \newline
+    \cvtag{Computer Vision} \cvtag{Neural Networks} \cvtag{TF-IDF} \cvtag{BERT} \cvtag{NLP}
+    \newline
+
+    \divider
+    
+    \cvevent{Software Engineering Extern }{| \cvrepo{Major League Hacking \hspace{50pt}}{https://mlh.io}}{Oct 2020 - Dec 2020}{}
+    Worked with a team to develop a mobile application to improve communication and information retention for the 101st division of the US Army.
+    \smallskip \smallskip \newline
+    \cvtag{React Native} \cvtag{Expo} \cvtag{Javascript}
+    % ----- EXPERIENCE -----
+
+    \switchcolumn
+
+    % ----- FRAMEWORKS -----
+        \cvsection{Frameworks}
+        \cvtag{\faJs React} \cvtag{\faJs React Native} \cvtag{\faJs Typescript} \cvtag{\faJs Node}
+        \newline
+        \cvtag{\faAndroid Jetpack Compose} \newline \cvtag{\faAndroid Android Room}
+        % ----- FRAMEWORKS -----
+
+        % ----- ACTIVITIES -----
+        \cvsection{Activities}
+
+        \cvevent{Computer Science House }{\cvrepo{| \faGlobe csh.rit.edu}{https://csh.rit.edu}}{}{}
+        \begin{itemize}
+        \item {{\color{emphasis}R\&D Director} {{\color{accent}\faCalendar}\color{emphasis} Dec 2020 - Dec 2021}
+            \newline
+            \smallskip
+            Responsible for aiding, encouraging, and evaluating member participation in technical projects.
+        }
+        \newline
+        \item {{\color{emphasis}System Administrator} {\color{accent}\faCalendar\color{emphasis} April 2021 - Present}
+            \newline
+            \smallskip
+            Assisted in maintaining and moderating critical infrastructure, including Ceph storage servers.}
+        \end{itemize}    
+        % ----- ACTIVITIES -----
+
+        % ----- LIBRARIES -----
+    
+        \cvsection{Libraries}
+        \cvtag{\faPython Matplotlib} \cvtag{\faPython Pandas} \cvtag{\faPython numpy} \cvtag{\faPython Tensorflow} \cvtag{\faPython SciPy}
+        \cvtag{\faAndroid Retrofit} \cvtag{\faAndroid Hilt} \cvtag{\faAndroid Dagger} 
+        \cvtag{\faJs Redux} \cvtag{\faJs Express}
+
+        % ----- LIBRARIES -----
+
+    \switchcolumn
+
+    \end{paracol}
+
+        % ----- PROJECTS -----
+        \cvsection{Projects}
+        \cvevent{Jeopardy! }{\cvrepo{| \faGithub EricKarschner37/Jeopardy}{https://github.com/EricKarschner37/Jeopardy} }{}{}
+        A replication of the classic game show Jeopardy!, with a React frontend, Android application, and Go backend. \smallskip \smallskip
+        \newline
+        \cvtag{React.JS} \cvtag{Kotlin} \cvtag{Go} \cvtag{WebSockets} \cvtag{Jetpack Compose}
+        \newline
+        \divider
+        
+        \cvevent{CSH AnDrink }{\cvrepo{| \faGithub EricKarschner37/AnDrink}{https://github.com/EricKarschner37/AnDrink}}{}{}
+        An Android client for the Computer Science House on-floor networked vending machines, using the MVVM architecture, the Android Room library for data persistence, and the Fuel library for making network calls. \smallskip \smallskip
+        \newline
+        \cvtag{Kotlin} \cvtag{Android Room} \cvtag{MVVM} \cvtag{OAuth v2}
+        \newline
+        % ----- PROJECTS -----
+\end{document}
